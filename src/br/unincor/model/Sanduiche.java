@@ -5,7 +5,7 @@ package br.unincor.model;
  * com a classe "Produto"
  *
  */
-public class Sanduiche {
+public class Sanduiche extends Produto{
 	
 	private Boolean trio; //Define se adiciona batata e refrigerante - sem validação
 	private Boolean dobroRecheio; //Define se terá o dobro de recheio - sem validação
@@ -15,8 +15,35 @@ public class Sanduiche {
 	/** Criar getters e setters **/
 
 	/** Implementar para mostrar os valores de todos os atributos **/
+	
+
+	public Sanduiche(String nome, Double preco, Boolean trio, Boolean dobroRecheio) {
+		super(nome, preco);
+		this.trio = trio;
+		this.dobroRecheio = dobroRecheio;
+	}
+	
+	
+	public Boolean getTrio() {
+		return trio;
+	}
+
+	public void setTrio(Boolean trio) {
+		this.trio = trio;
+	}
+
+	public Boolean getDobroRecheio() {
+		return dobroRecheio;
+	}
+
+	public void setDobroRecheio(Boolean dobroRecheio) {
+		this.dobroRecheio = dobroRecheio;
+	}
+
 	public String verDados() {
-		return "";
+		return super.verDados() +
+	"\nTrio: " + this.trio +
+	"\nDobro Recheio: " + this.dobroRecheio;
 	}
 	
 }

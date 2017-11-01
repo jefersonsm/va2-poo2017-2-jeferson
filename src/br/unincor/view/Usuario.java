@@ -55,30 +55,69 @@ public class Usuario {
 	}
 
 	public Integer recebeInteiro(String texto) {
-		return Integer.parseInt(JOptionPane.showInputDialog(texto));
+		
+		try {
+			Integer resposta = Integer.parseInt(JOptionPane.showInputDialog(texto));
+			return resposta;
+		} catch (Exception e) {
+			exibeMsgErro("Erro na entrada do usuário");
+		}
+		return null;
 	}
 
 	public Long recebeLong(String texto) {
-		return Long.parseLong(JOptionPane.showInputDialog(texto));
+		try {
+			Long resposta = Long.parseLong(JOptionPane.showInputDialog(texto));
+			return resposta;
+		} catch (Exception e) {
+			exibeMsgErro("Erro na entrada do usuário");
+		}
+		return null;
+		
 	}
 
 	public Double recebeDouble(String texto) {
-		return Double.parseDouble(JOptionPane.showInputDialog(texto));
+		
+		try {
+			Double resposta = Double.parseDouble(JOptionPane.showInputDialog(texto));
+			return resposta;
+		} catch (Exception e) {
+			exibeMsgErro("Erro na entrada do usuário");
+		}
+		return null;
 	}
 
 	public Float recebeFloat(String texto) {
-		return Float.parseFloat(JOptionPane.showInputDialog(texto));
+		try {
+			Float resposta = Float.parseFloat(JOptionPane.showInputDialog(texto));
+			return resposta;
+		} catch (Exception e) {
+			exibeMsgErro("Erro na entrada do usuário");
+		}
+		return null;
 	}
 
 	public Boolean recebeBoolean(String texto) {
-		Integer op = JOptionPane.showConfirmDialog(null, texto);
+		try {
+			Integer op = JOptionPane.showConfirmDialog(null, texto);
 
-		if (op == 0)
-			return true;
-		return false;
+			if (op == 0)
+				return true;
+			return false;
+			
+		} catch (Exception e) {
+			exibeMsgErro("Erro na entrada do usuário");
+		}
+		return null;
 	}
 
 	public String recebeTexto(String texto) {
-		return JOptionPane.showInputDialog(texto);
+		try {
+			return JOptionPane.showInputDialog(texto);			
+		} catch (Exception e) {
+			exibeMsgErro("Erro na entrada do usuário");
+		}
+		return null;
+		
 	}
 }
